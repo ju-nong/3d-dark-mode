@@ -57,7 +57,7 @@ setInterval(() => {
         }
 
         &#moon {
-            transform: translate(100%, -50%) scale(0.8);
+            transform: translate(100%, -50%) scale(0.7);
             z-index: 3;
 
             animation-name: Moon;
