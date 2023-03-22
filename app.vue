@@ -1,11 +1,13 @@
 <template>
     <div class="w-[100vw] h-[100vh] relative flex items-center justify-center">
         <div class="main-container text-6xl relative">
-            <p id="sun">🌞</p>
-            <p id="moon">🌚</p>
+            <p id="sun" class="pointer-events-none">🌞</p>
+            <p id="moon" class="pointer-events-none">🌚</p>
         </div>
-        <p class="hide-text text-white absolute z-[0] bottom-[30%] font-black">
-            오 안녕하세요?
+        <p
+            class="hide-text text-white absolute z-[0] bottom-[30%] font-black pointer-events-none"
+        >
+            {{ words[randomIndex] }}
         </p>
         <img
             src="images/space.jpg"
@@ -17,7 +19,27 @@
 
 <script setup>
 import "/style/style.scss";
-const count = ref(0);
+const randomIndex = ref(0);
+
+const words = [
+    "오 안녕하세요?",
+    "회사에서 심심해서 만들어봤어요",
+    "배고파요 ㅠ___ㅠ",
+    "오늘 점심 추천 받아요",
+    "Javascript는 무적이에요",
+    "Vue도 재밌고 React도 재밌어요",
+    "오아리는 최고에요",
+    "오아리는 키우는 강아지 이름이에요",
+    "오아리는 갈색 푸들입니다",
+    "아 졸리다 졸려",
+    "^___^ b",
+    "이 문구는 그냥 아무거나 넣었어요",
+];
+
+setInterval(() => {
+    randomIndex.value = Math.floor(Math.random() * words.length + 1);
+    console.log(randomIndex.value);
+}, 10000);
 </script>
 
 <style lang="scss">
@@ -48,6 +70,7 @@ const count = ref(0);
 
 .background {
     filter: contrast(200%);
+
     animation-name: Space;
     animation-duration: 10s;
     animation-iteration-count: infinite;
