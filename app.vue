@@ -37,7 +37,7 @@ const words = [
 ];
 
 setInterval(() => {
-    randomIndex.value = Math.floor(Math.random() * words.length + 1);
+    randomIndex.value = Math.floor(Math.random() * words.length - 1);
 }, 10000);
 </script>
 
