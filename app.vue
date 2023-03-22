@@ -10,7 +10,7 @@
             {{ words[randomIndex] }}
         </p>
         <img
-            src="images/space.jpg"
+            src="~/assets/images/space.jpg"
             alt="우주"
             class="background absolute object-cover z-[-100] w-full h-full"
         />
