@@ -1,11 +1,11 @@
 <template>
     <div class="w-[100vw] h-[100vh] relative flex items-center justify-center">
-        <div class="main-container text-6xl relative">
+        <div class="main-container relative text-[15vmin]">
             <p id="sun" class="pointer-events-none">🌞</p>
             <p id="moon" class="pointer-events-none">🌚</p>
         </div>
         <p
-            class="hide-text text-white absolute z-[0] bottom-[30%] font-black pointer-events-none"
+            class="hide-text text-white absolute z-[0] bottom-[10vmin] font-black pointer-events-none"
         >
             {{ words[randomIndex] }}
         </p>
@@ -38,12 +38,12 @@ const words = [
 
 setInterval(() => {
     randomIndex.value = Math.floor(Math.random() * words.length + 1);
-    console.log(randomIndex.value);
 }, 10000);
 </script>
 
 <style lang="scss">
 .main-container {
+    /* overflow-x: hidden; */
     p {
         position: absolute;
 
